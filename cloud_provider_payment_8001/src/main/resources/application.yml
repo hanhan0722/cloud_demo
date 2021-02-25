@@ -1,0 +1,35 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    dirver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.100.54/data-statistics?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false&failOverReadOnly=false
+    username: hctest
+    password: 1qdNx1KDlK
+  mvc:
+    date-format: yyyy-MM-dd
+houchang:
+  redis:
+    nodes: 192.168.100.42:6379
+    maxTotal: 1000
+    maxIdle: 100
+    minIdle: 20
+    password: kkbtest2019
+    db: 13
+mybatis:
+  typeAliasesPackage: com.kkb.selfTest.domain
+  mapperLocations: classpath:mappers/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+    cacheEnabled: false
+logging:
+  level:
+    root: INFO
+    com:
+      kkb:
+        selfTest:
+          mapper: debug
+  file:
+    name: /opt/logs/selfTest.log
